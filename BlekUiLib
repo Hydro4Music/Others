@@ -515,6 +515,9 @@ function Library:Create(table)
     --// Make the first tab visible
     game.CoreGui['___SJNVD'].main.tabContainer.ChildAdded:Connect(function()
         pcall(function()
+            game.CoreGui['___SJNVD'].main:FindFirstChild('container').Visible = true
+        end)
+        pcall(function()
             repeat wait() until game.CoreGui['___SJNVD'].main:FindFirstChild('tabContainer'):FindFirstChildWhichIsA('TextButton')
         end)
         game:GetService('TweenService'):Create(game.CoreGui['___SJNVD'].main:FindFirstChild('tabContainer'):FindFirstChildWhichIsA('TextButton'), TweenInfo.new(0.3), {TextTransparency = 0}):Play()
